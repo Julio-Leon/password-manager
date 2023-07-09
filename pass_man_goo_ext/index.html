@@ -1,12 +1,18 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="style.css">
-    </head>
-  <body>
-    <div class="flex-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="login" class="flex-container">
         <div>
-            <label for="user">Username:</label>
-            <input type="text" name="user" id="user">
+            <label for="email">email:</label>
+            <input type="email" name="email" id="email">
         </div>
 
         <div>
@@ -14,7 +20,10 @@
             <input type="password" name="pass" id="pass">
         </div>
 
-        <button>Hack</button>
+       <button id="submit">Hack</button>
+    </div>
+    <div id="password-list" class="flex-container">
+
     </div>
   </body>
 </html>

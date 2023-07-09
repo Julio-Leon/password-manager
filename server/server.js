@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 const UserModel = require('./models/user')
 const bcrypt = require('bcrypt')
+const cors= require('cors')
+
+app.use(cors())
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -32,6 +35,7 @@ app.post('/signin', async (req, res) => {
       passwordsMatch = bcrypt.compareSync(plainPasswordAttempt, userAccount.password)
       if (!passwordsMatch) errorTray.push('Password failed')
     }
+    console.log({passwordsOrErrors: passwordsMatch ? userAccount.passwordList : errorTray, loggedIn: passwordsMatch})
     res.json({passwordsOrErrors: passwordsMatch ? userAccount.passwordList : errorTray, loggedIn: passwordsMatch}).status(201)
   } catch (error) {
     console.error(error)
